@@ -1,42 +1,46 @@
 <div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
+  <div class="col-md-6 text-black bg-light">
+    <div class="card mt-3">
+        <form class="form login-form">
+            <div class="card-header"><b>login</b></div>
+            <div class="form-group">
+    {{!-- <label for="email-login">Email address</label> --}}
+            <input type="email" class="form-control" id="email-login" placeholder="email">
+    
+    </div>
+    
+    <div class="form-group">
+    {{!-- <label for="exampleInputPassword1">Password</label> --}}
+    <input type="password" class="form-control" id="password-login" placeholder="password">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">go</button>
+    </div>
   </div>
 </div>
+</form>
 
+    {{!-- <div class="row"> --}}
+<div class="col-md-6 text-black bg-light">
+    <div class="card mt-3">
+        <form class="form signup-form">
+            <div class="card-header"><b>signup</b></div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="signup-login" placeholder="name">
+            </div>
+            <div class="form-group">
+                {{!-- <label for="email-login">Email address</label> --}}
+                <input type="email" class="form-control" id="email-signup" placeholder="email">
+            </div>
+    <div class="form-group">
+        {{!-- <label for="exampleInputPassword1">Password</label> --}}
+        <input type="password" class="form-control" id="signup-password" placeholder="password">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">go</button>
+    </div>
+    </div>
+  </div>
+</div>
+</form>
 <script src="./js/login.js"></script>

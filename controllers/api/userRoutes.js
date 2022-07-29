@@ -7,10 +7,10 @@ router.get('/', async (req, res) => {
       
       const userData = await User.findAll({
         include: [
-        //   {
-        //     model: Post,
-        //     attributes: ['title'],
-        //   },
+          {
+            model: Post,
+            attributes: ['title'],
+          },
         ],
       });
   
@@ -86,5 +86,16 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+router.get('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
 
 module.exports = router;
