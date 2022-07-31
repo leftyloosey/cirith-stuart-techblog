@@ -10,3 +10,4 @@ packages. I used bootstrap for the website's simple design.
 
 [heroku deployment](https://cirith-blog.herokuapp.com/)
 
+![screen](screen.png)
