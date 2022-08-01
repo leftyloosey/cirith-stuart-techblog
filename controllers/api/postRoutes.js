@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
-// const { Post } = require('/Users/davidhardin/Desktop/ch/ch14/models');
+const { Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -26,6 +25,55 @@ router.delete('/:id', withAuth, async (req, res) => {
       },
     });
 
+    if (!postData) {
+      res.status(404).json({ message: 'No such post.' });
+      return;
+    }
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+    // res.status(200).json(post);
+    console.log(post)
+    res.render('post', {
+      post,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.put('/edit/:id', async (req, res) => {
+  try {
+
+    const postData = await Post.update(
+      {
+        title: req.body.title,
+        body: req.body.body
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    )
     if (!postData) {
       res.status(404).json({ message: 'No such post.' });
       return;
