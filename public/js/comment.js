@@ -2,19 +2,23 @@ const commentFormHandler = async (event) => {
     event.preventDefault();
     const body = document.querySelector('#comment-body').value.trim();
   
-    if (title && body) {
+    if (body) {
         
-      const id = event.target.getAttribute('data-id');
+      const post_id = event.target.getAttribute('data-id');
+      alert(post_id)
+      console.log("POST ID IS", post_id)
       const response = await fetch(`/api/comments`, {
         method: 'POST',
-        body: JSON.stringify({ body }),
+        body: JSON.stringify({ body, post_id }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace(`/viewpost/${id}`);
+        // document.location.replace(`/comments/${id}`);
+        // document.location.replace(`/`);
+        console.log("Response OK for comment")
       } else {
         alert('Failed to edit post');
       }

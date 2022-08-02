@@ -1,7 +1,7 @@
 {{#each posts as |post| }}
 <div class="card mt-3">
   <div class="card-header">
-   <b> {{ title }} </b>
+   <b> <a href="api/posts/{{ id }}">{{ title }}</a></b>
   </div>
   <div class="card-body">
     <i class="card-text">posted by {{ user.name }} on {{format_date post.date_created}}</i>
