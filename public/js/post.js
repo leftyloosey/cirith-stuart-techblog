@@ -1,3 +1,5 @@
+console.log("post.js loaded")
+
 const editFormHandler = async (event) => {
 
 
@@ -19,6 +21,7 @@ const editFormHandler = async (event) => {
       });
   
       if (response.ok) {
+        alert("post successfully edited")
         document.location.replace('/profile');
       } else {
         alert('Failed to edit post');

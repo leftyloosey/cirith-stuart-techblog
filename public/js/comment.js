@@ -5,7 +5,7 @@ const commentFormHandler = async (event) => {
     if (body) {
         
       const post_id = event.target.getAttribute('data-id');
-      alert(post_id)
+      // alert(post_id)
       console.log("POST ID IS", post_id)
       const response = await fetch(`/api/comments`, {
         method: 'POST',
@@ -18,9 +18,10 @@ const commentFormHandler = async (event) => {
       if (response.ok) {
         // document.location.replace(`/comments/${id}`);
         // document.location.replace(`/`);
+        document.location.reload();
         console.log("Response OK for comment")
       } else {
-        alert('Failed to edit post');
+        alert('Please log in to comment');
       }
     }
   };
