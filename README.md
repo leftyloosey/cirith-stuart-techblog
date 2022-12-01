@@ -1,12 +1,14 @@
-# Challenge 14: A Tech Blog
+A Tech Blog
 
 ## Welcome
 
-The assignment was to create a simple blog app. We were to code the front and
-back end of a website that allows a user to create an account, write and save
-blog posts, and store session data between visits to the website. This was 
-accomplished using node, express, mysql, sequelize, and a number of other node
-packages. I used bootstrap for the website's simple design.
+This is a simple blog app, built for practice with MVC. I used Node, Express,
+Mysql, and Sequelize to build it, with express-session for authentication. I
+Bootstrap'd the simple little frontend. It is deployed to heroku. Anyone can
+come, create an account, and create posts and comment on other people's posts.
+Not many people do. Because no one on earth knows it exists. But now you know it
+exists. You could write something about tech news. You could write anything.
+Please don't curse.
 
 [heroku deployment](https://cirith-blog.herokuapp.com/)
 
